@@ -6,7 +6,7 @@ def log(msg):
 
 
 if __name__ == "__main__":
-    solution = solution()
-    result = solution.add(2, 2)
+    solution = solution("input.txt")
+    result = solution.similarity()
 
     log(result)
