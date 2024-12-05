@@ -8,10 +8,10 @@ class TestSolution(unittest.TestCase):
 
     def test_solution(self):
         # Arrange
-        expected = 2
+        expected = 6
 
         # Act
-        actual = self.solution.countValidReports()
+        actual = self.solution.countValidReportsDamping()
 
         # Assert
         self.assertEqual(expected, actual)

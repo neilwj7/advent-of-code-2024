@@ -7,6 +7,9 @@ def log(msg):
 
 if __name__ == "__main__":
     solution = solution("input.txt")
-    result = solution.countValidReports()
+    result1 = solution.countValidReports()
+    log(result1)
 
-    log(result)
+    result2 = solution.countValidReportsDamping()
+    log(result2)
+
