@@ -22,6 +22,7 @@ class solution:
                 res += 1
         return res
     
+    
     def countValidReportsDamping(self):
         res = 0
         for report in self.reports:
