@@ -21,6 +21,7 @@ class solution:
             if self.check(self.targets[i], self.sequences[i]):
                 res += self.targets[i]
         return res
+    
     def countTotalCalibrationWithConcat(self):
         res = 0
         for i in range(len(self.targets)):
