@@ -4,14 +4,14 @@ from solution import solution
 
 class TestSolution(unittest.TestCase):
     def setUp(self):
-        self.solution = solution()
+        self.solution = solution('test_input.txt', 11, 7)
 
     def test_solution(self):
         # Arrange
-        expected = 4
+        expected = 12
 
         # Act
-        actual = self.solution.add(2, 2)
+        actual = self.solution.solveP2()
 
         # Assert
         self.assertEqual(expected, actual)

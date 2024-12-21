@@ -6,7 +6,8 @@ def log(msg):
 
 
 if __name__ == "__main__":
-    solution = solution()
-    result = solution.add(2, 2)
-
-    log(result)
+    solution = solution('input.txt', 101, 103)
+    result1 = solution.solveP1()
+    log(result1)
+    result2 = solution.solveP2()
+    log(result2)
