@@ -13,7 +13,6 @@ class solution:
                 if line == '\n':
                     continue
                 res2.append(line.strip())
-
             return set(res1), res2
 
     def solveP1(self):
