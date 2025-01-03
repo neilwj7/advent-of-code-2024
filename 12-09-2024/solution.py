@@ -5,14 +5,12 @@ class solution:
         self.filePositions, self.blankPositions = self.getLocations()
         self.workingS = self.createWorkingStr()
 
-
     def readInput(self, fileName):
         res = ""
         with open(fileName, 'r') as file:
             for line in file:
                 res = line.strip()
-        return res
-    
+        return res 
 
     def getLocations(self):
         fFlag = True
@@ -30,7 +28,6 @@ class solution:
             curr = curr + a
             fFlag = not fFlag
         return filePositions, blankPositions
-    
 
     def createWorkingStr(self):
         s = self.filePositions[0][1] + 1
@@ -55,7 +52,6 @@ class solution:
             res += i * int(c)
         return res
 
-
     def modifyPositionsP1(self):
         workingS = deepcopy(self.workingS)
         currBlank = 0
@@ -78,7 +74,6 @@ class solution:
                 currChar -= 1
         return workingS
 
-
     def solveP2(self):
         workingS = self.modifyPositionsP2()
         res = 0
@@ -87,7 +82,6 @@ class solution:
                 continue
             res += i * int(c)
         return res
-
 
     def modifyPositionsP2(self):
         workingS = deepcopy(self.workingS)
@@ -116,6 +110,5 @@ class solution:
                     else:
                         blanks[currBlank][0] = sb + l
                     break
-        
         return workingS
 

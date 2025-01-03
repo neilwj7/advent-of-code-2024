@@ -1,5 +1,4 @@
 from copy import deepcopy
-from math import isclose
 class solution:
     def __init__(self, inputFile):
         self.map = self.getInput(inputFile)
