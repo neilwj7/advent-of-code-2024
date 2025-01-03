@@ -1,21 +1,20 @@
 from collections import defaultdict
 class solution:
     def __init__(self, inputFile):
-        self.orderDict, self.updates = self.readFromFile(inputFile)
+        self.orderDict, self.updates = self.getinput(inputFile)
 
-    def readFromFile(self, inputFile):
+    def getInput(self, fileName):
         input1 = []
         input2 = []
         midpointflag = False
-        with open(inputFile, 'r') as file:
+        with open(fileName, 'r') as file:
             for line in file:
                 if line == '\n':
                         midpointflag = True
                         continue
-                if midpointflag:
-                    input2.append(line)
-                else:
-                    input1.append(line)
+                if midpointflag: input2.append(line)
+                else: input1.append(line)
+                
         res2 = [list(map(int, line.strip().split(','))) for line in input2]
         res1 = defaultdict(list)
         for line in input1:

@@ -3,54 +3,44 @@ class solution:
         self.s = self.getInput(fileName)
         self.enable = True
 
-
     def getInput(self, fileName):
         res = ""
         with open(fileName, 'r') as file:
             for line in file:
                 res = res + line
         return res
-    
 
-    def sumMultiplications(self):
+    def solveP1(self):
         res = 0
         for i in range(len(self.s)):
             res += self.checkMul(i)
         return res
-    
 
-    def sumMultiplicationsWithEnable(self):
+    def solveP2(self):
         res = 0
         for i in range(len(self.s)):
-            self.enable = self.checkEnable(i)
+            self.enable = self.updateEnable(i)
             if self.enable:
                 res += self.checkMul(i)
         return res
 
-
-    def checkEnable(self, i):
+    def updateEnable(self, i):
         if len(self.s) - i < 4:
             return self.enable
         if self.s[i:i+4] == 'do()':
             return True
-        
         if len(self.s) - i < 7:
             return self.enable
         if self.s[i:i+7] == "don't()":
             return False
-        
         return self.enable
-
 
     def checkMul(self, i):
         # first check if substring starts with 'mul('
-        if len(self.s) - i < 4:
-            return 0
-        if self.s[i:i+4] != 'mul(':
-            return 0
+        if (len(self.s) - i < 4) or (self.s[i:i+4] != 'mul('): return 0
+
         i += 4
-        if i >= len(self.s) - 1:
-            return 0
+        if i >= len(self.s) - 1: return 0
         
         # check first number
         firstNum = ''

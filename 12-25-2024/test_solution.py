@@ -8,10 +8,10 @@ class TestSolution(unittest.TestCase):
 
     def test_solution(self):
         # Arrange
-        expected = 54
+        expected = 3
 
         # Act
-        actual = self.solution.solveP2()
+        actual = self.solution.solveP1()
 
         # Assert
         self.assertEqual(expected, actual)

@@ -3,14 +3,10 @@ class solution:
         self.grid = self.getInput(fileName)
         self.markedLocations = [['0' for i in range(len(self.grid[0]))] for j in range(len(self.grid))]
         self.start = self.getInitialCoords()
-        if self.grid[self.start[0]][self.start[1]] == '^':
-            self.initialDir = 0
-        elif self.grid[self.start[0]][self.start[1]] == '>':
-            self.initialDir = 1
-        elif self.grid[self.start[0]][self.start[1]] == 'v':
-            self.initialDir = 2
-        else:
-            self.initialDir = 3
+        if self.grid[self.start[0]][self.start[1]] == '^': self.initialDir = 0
+        elif self.grid[self.start[0]][self.start[1]] == '>': self.initialDir = 1
+        elif self.grid[self.start[0]][self.start[1]] == 'v': self.initialDir = 2
+        else: self.initialDir = 3
 
     def getInput(self, fileName):
         res = []
